@@ -64,6 +64,31 @@ const weeks = [
     ["MCP y tool calling seguro", "Exponer una API o script local con permisos mínimos, validación de entradas, límites y trazabilidad.", "LABORATORIO", "3 h"],
     ["Evals y benchmarks de agentes", "Diseñar pruebas automatizadas para errores lógicos, alucinaciones, regresiones y degradación de rendimiento.", "PRÁCTICA", "2.5 h"],
   ]},
+  { title: "Matemáticas discretas y razonamiento", subtitle: "Fundamentos matemáticos para ingeniería", tasks: [
+    ["Lógica, conjuntos y relaciones", "Repasar proposiciones, cuantificadores, funciones, relaciones de equivalencia y razonamiento formal.", "TEORÍA", "2 h"],
+    ["Inducción, combinatoria y probabilidad", "Resolver recurrencias, conteos, invariantes y probabilidades útiles para analizar algoritmos.", "PRÁCTICA", "2 h"],
+    ["Demostraciones de algoritmos", "Justificar corrección y complejidad de tres algoritmos usando invariantes y casos límite.", "LABORATORIO", "2.5 h"],
+  ]},
+  { title: "Ingeniería de software y entrega continua", subtitle: "Diseño, calidad y mantenimiento", tasks: [
+    ["Git y colaboración avanzada", "Practicar ramas, rebase, resolución de conflictos, revisión de código y commits mantenibles.", "PRÁCTICA", "2 h"],
+    ["Testing y CI/CD", "Diseñar una pirámide de pruebas y automatizar lint, tests y builds en un pipeline de integración continua.", "LABORATORIO", "3 h"],
+    ["Arquitectura limpia y ADRs", "Documentar decisiones, separar capas y evaluar trade-offs de mantenibilidad, coste y complejidad.", "PRÁCTICA", "2 h"],
+  ]},
+  { title: "Seguridad aplicada e identidad", subtitle: "Protección de aplicaciones y datos", tasks: [
+    ["Criptografía para desarrolladores", "Comprender hash, cifrado simétrico/asimétrico, firmas, TLS y errores comunes de implementación.", "TEORÍA", "2 h"],
+    ["OAuth2, OIDC y secretos", "Implementar autenticación, autorización, scopes, rotación de tokens y gestión segura de secretos.", "LABORATORIO", "3 h"],
+    ["Threat modeling y respuesta", "Construir un modelo STRIDE, priorizar riesgos y definir controles, alertas y recuperación.", "PRÁCTICA", "2 h"],
+  ]},
+  { title: "Cloud, DevOps y operación", subtitle: "Despliegue y confiabilidad de plataformas", tasks: [
+    ["Contenedores y Kubernetes", "Empaquetar una API con Docker y comprender servicios, deployments, health checks y configuración.", "LABORATORIO", "3 h"],
+    ["Infraestructura como código", "Definir infraestructura reproducible con Terraform y aplicar principios de configuración segura.", "PRÁCTICA", "2 h"],
+    ["Backups y recuperación", "Diseñar RPO/RTO, backups probados, despliegues graduales y un plan de recuperación ante desastres.", "TEORÍA", "2 h"],
+  ]},
+  { title: "Proyecto integrador y comunicación técnica", subtitle: "Síntesis y preparación profesional", tasks: [
+    ["Diseñar el sistema completo", "Definir una plataforma con API, base de datos, autenticación, colas, idempotencia y observabilidad.", "PRÁCTICA", "3 h"],
+    ["Construir y desplegar", "Implementar el sistema, añadir pruebas de carga y publicar un entorno reproducible con documentación.", "LABORATORIO", "5 h"],
+    ["Defender decisiones técnicas", "Crear diagramas, ADRs, runbook y una presentación que explique límites, riesgos y trade-offs.", "PRÁCTICA", "2.5 h"],
+  ]},
 ];
 
 const storageKey = "ruta-cs-progress";
@@ -81,7 +106,7 @@ function renderWeeks() {
     if (filter !== "all" && visibleTasks.length === 0) return "";
     return `<article class="week-card ${wi === 0 ? "open current" : ""}" data-week="${wi}">
       <div class="week-summary" role="button" tabindex="0" aria-expanded="${wi === 0}">
-        <span class="week-number">0${wi + 1}</span><div class="week-info"><strong>Semana ${wi + 1} · ${week.title}</strong><span>${week.subtitle}</span></div>
+        <span class="week-number">${String(wi + 1).padStart(2, "0")}</span><div class="week-info"><strong>Semana ${wi + 1} · ${week.title}</strong><span>${week.subtitle}</span></div>
         <div><div class="week-track"><i style="width:${done / week.tasks.length * 100}%"></i></div><div class="week-percent">${done}/${week.tasks.length} HECHAS</div></div><span class="chevron">⌄</span>
       </div>
       <div class="tasks">${visibleTasks.map(({ task, ti }) => `<label class="task ${isDone(`${wi}-${ti}`) ? "done" : ""}"><input type="checkbox" data-task="${wi}-${ti}" ${isDone(`${wi}-${ti}`) ? "checked" : ""}/><span class="task-body"><span class="task-title">${task[0]}</span><span class="task-desc">${task[1]}</span></span><span class="task-tag">${task[2]} · ${task[3]}</span></label>`).join("")}</div>

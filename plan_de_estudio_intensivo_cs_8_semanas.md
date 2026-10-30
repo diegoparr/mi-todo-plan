@@ -1,4 +1,4 @@
-# Plan Intensivo de Nivelación y Excelencia en Ciencias de la Computación (13 Semanas)
+# Plan Intensivo de Nivelación y Excelencia en Ciencias de la Computación (19 Semanas)
 
 Este plan de estudio está diseñado para cubrir los fundamentos teóricos y prácticos de **Ciencias de la Computación e Ingeniería de Software** que marcan la diferencia entre un desarrollador que solo maneja librerías superficiales y un ingeniero con criterio técnico de alto nivel.
 
@@ -187,3 +187,7 @@ Este plan de estudio está diseñado para cubrir los fundamentos teóricos y pr�
    * Documentación de [OpenTelemetry](https://opentelemetry.io/docs/).
    * Documentación de [Model Context Protocol](https://modelcontextprotocol.io/).
    * Guía de [OWASP Top 10](https://owasp.org/www-project-top-ten/).
+6. **Matemáticas discretas:**
+   * Libro abierto: [Discrete Mathematics: An Open Introduction](https://discrete.openmathbooks.org/dmoi3.html).
+7. **Cloud e ingeniería de software:**
+   * [The Twelve-Factor App](https://12factor.net/) y [DevOps Roadmap](https://roadmap.sh/devops).
