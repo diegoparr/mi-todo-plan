@@ -1,4 +1,4 @@
-# Plan Intensivo de Nivelación y Excelencia en Ciencias de la Computación (8 Semanas)
+# Plan Intensivo de Nivelación y Excelencia en Ciencias de la Computación (13 Semanas)
 
 Este plan de estudio está diseñado para cubrir los fundamentos teóricos y prácticos de **Ciencias de la Computación e Ingeniería de Software** que marcan la diferencia entre un desarrollador que solo maneja librerías superficiales y un ingeniero con criterio técnico de alto nivel.
 
@@ -126,6 +126,49 @@ Este plan de estudio está diseñado para cubrir los fundamentos teóricos y pr�
 
 ---
 
+## Bloque V: Concurrencia real, redes y sistemas distribuidos (Semanas 9 a 11)
+
+### Semana 9: Concurrencia real, memoria y sistemas operativos
+* **Conceptos clave:**
+  * Condiciones de carrera, exclusión mutua, deadlocks y contención; comparar mutex, semáforos y canales.
+  * Recolector de basura, fugas de memoria, fragmentación del heap y consumo de *file descriptors* en Linux.
+* **Laboratorio semanal:**
+  * Implementar un pool de workers bajo carga, medir la contención y resolver una carrera usando herramientas de profiling.
+
+### Semana 10: Redes bajo latencia y protocolos modernos
+* **Conceptos clave:**
+  * TCP/UDP, buffers, backpressure, control de congestión y degradación de paquetes con latencia, pérdida y jitter.
+  * WebSockets, gRPC, multiplexación de HTTP/2 y HTTP/3 sobre QUIC; identificar *head-of-line blocking*.
+* **Laboratorio semanal:**
+  * Emular una red degradada y comparar throughput, retransmisiones y colas con `tc`, Wireshark o herramientas equivalentes.
+
+### Semana 11: Almacenamiento distribuido y consistencia
+* **Conceptos clave:**
+  * B+ Trees en bases relacionales, árboles LSM y *compaction* en almacenamiento columnar, además de particionamiento.
+  * Teorema CAP, consistencia eventual, transacciones Saga e idempotencia estricta para operaciones de pago.
+  * Kafka, RabbitMQ y Redis Streams; backoff exponencial, *circuit breakers* y *rate limiting*.
+* **Laboratorio semanal:**
+  * Construir un flujo de mensajes con reintentos seguros, deduplicación y aislamiento ante la caída de un consumidor.
+
+## Bloque VI: Observabilidad, seguridad y dirección de agentes (Semanas 12 y 13)
+
+### Semana 12: Observabilidad, forense y profiling
+* **Conceptos clave:**
+  * Heap dumps, flame graphs y perfiles de CPU para localizar fugas, bloqueos y el hilo que degrada el rendimiento.
+  * OpenTelemetry, métricas Prometheus y logs estructurados para seguir una petición entre servicios.
+* **Laboratorio semanal:**
+  * Reproducir una latencia de 3 segundos, formular hipótesis y confirmar la causa con trazas distribuidas y perfiles.
+
+### Semana 13: Auditoría de seguridad y dirección de agentes
+* **Conceptos clave:**
+  * Prompt injection indirecta, ataques de tiempo, fugas de contexto, CORS/tokens y escalada de privilegios.
+  * Criterio de auditor para detectar validaciones de límites ausentes y fallos explotables en código generado.
+  * Model Context Protocol (MCP), *tool calling* con permisos mínimos y evaluaciones automatizadas de agentes.
+* **Laboratorio semanal:**
+  * Exponer un script local mediante una herramienta segura y crear un benchmark que mida errores lógicos, alucinaciones y regresiones de rendimiento.
+
+---
+
 ## Recursos Clave Recomendados
 
 1. **Algoritmos y Estructuras:**
@@ -140,3 +183,7 @@ Este plan de estudio está diseñado para cubrir los fundamentos teóricos y pr�
 4. **Arquitectura y Diseño:**
    * Sitio web: *Refactoring.Guru* (Patrones de diseño y principios SOLID).
    * Artículo: *Mocks Aren't Stubs* de Martin Fowler.
+5. **Observabilidad y agentes:**
+   * Documentación de [OpenTelemetry](https://opentelemetry.io/docs/).
+   * Documentación de [Model Context Protocol](https://modelcontextprotocol.io/).
+   * Guía de [OWASP Top 10](https://owasp.org/www-project-top-ten/).

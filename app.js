@@ -39,6 +39,31 @@ const weeks = [
     ["Patrones de resiliencia", "Circuit breaker, retries, rate limiting e idempotencia.", "TEORÍA", "1.5 h"],
     ["Diseñar una arquitectura resiliente", "Diagrama de un sistema de alto tráfico.", "PRÁCTICA", "3 h"],
   ]},
+  { title: "Concurrencia real, memoria y sistemas operativos", subtitle: "Concurrencia, runtime e internas de Linux", tasks: [
+    ["Primitivas de sincronización", "Comparar mutex, semáforos y canales; detectar carreras y evitar deadlocks bajo contención.", "TEORÍA", "2 h"],
+    ["GC, heap y fugas de memoria", "Analizar pausas del recolector, fragmentación, referencias retenidas y consumo de file descriptors en Linux.", "TEORÍA", "2 h"],
+    ["Laboratorio de carga concurrente", "Implementar un pool de workers, medir contención y resolver una carrera con herramientas de profiling.", "LABORATORIO", "3 h"],
+  ]},
+  { title: "Redes bajo latencia y protocolos modernos", subtitle: "TCP/UDP, WebSockets, gRPC y HTTP/2–HTTP/3", tasks: [
+    ["TCP, UDP y buffers de red", "Estudiar control de congestión, ventanas, backpressure y degradación de paquetes con latencia real.", "TEORÍA", "2 h"],
+    ["Multiplexación y comunicación", "Comparar WebSockets y gRPC con HTTP/2 y HTTP/3 sobre QUIC; identificar head-of-line blocking.", "TEORÍA", "2 h"],
+    ["Laboratorio de red degradada", "Emular latencia, pérdida y jitter; observar throughput, retransmisiones y colas con métricas.", "LABORATORIO", "3 h"],
+  ]},
+  { title: "Almacenamiento distribuido y consistencia", subtitle: "Arquitectura de datos y sistemas distribuidos", tasks: [
+    ["B+ Trees, LSM y particionamiento", "Contrastar índices B+ con árboles LSM, compaction, almacenamiento columnar y distribución por particiones.", "TEORÍA", "2 h"],
+    ["CAP, Saga e idempotencia", "Diseñar consistencia eventual, transacciones Saga y claves idempotentes para no duplicar cobros.", "TEORÍA", "2 h"],
+    ["Colas y resiliencia distribuida", "Construir un flujo con Kafka, RabbitMQ o Redis Streams usando backoff exponencial, circuit breaker y rate limiting.", "LABORATORIO", "3 h"],
+  ]},
+  { title: "Observabilidad, forense y profiling", subtitle: "Diagnóstico de sistemas en producción", tasks: [
+    ["Heap dumps y flame graphs", "Leer volcados de memoria, gráficos de llamadas y perfiles de CPU para localizar fugas y bloqueos.", "TEORÍA", "2 h"],
+    ["Trazabilidad y telemetría", "Instrumentar una petición con OpenTelemetry, métricas Prometheus y logs estructurados correlacionados.", "PRÁCTICA", "2 h"],
+    ["Incidente de rendimiento", "Reproducir una latencia de 3 segundos, formular hipótesis y confirmar la causa con trazas y perfiles.", "LABORATORIO", "3 h"],
+  ]},
+  { title: "Auditoría de seguridad y dirección de agentes", subtitle: "Seguridad ofensiva, MCP y evaluaciones", tasks: [
+    ["Auditoría de código generado", "Detectar prompt injection indirecta, timing attacks, fugas de contexto, CORS/tokens y escalada de privilegios.", "PRÁCTICA", "2 h"],
+    ["MCP y tool calling seguro", "Exponer una API o script local con permisos mínimos, validación de entradas, límites y trazabilidad.", "LABORATORIO", "3 h"],
+    ["Evals y benchmarks de agentes", "Diseñar pruebas automatizadas para errores lógicos, alucinaciones, regresiones y degradación de rendimiento.", "PRÁCTICA", "2.5 h"],
+  ]},
 ];
 
 const storageKey = "ruta-cs-progress";
